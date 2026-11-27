@@ -119,19 +119,13 @@ p{margin:0}
 .cursor{display:inline-block;width:.55em;height:1.05em;background:var(--lime);vertical-align:-.15em;animation:blink 1.1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 
-.stats-region{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(280px,.88fr);gap:1.25rem;align-items:stretch;margin-top:3.5rem}
-.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);border-radius:var(--r);overflow:hidden;min-width:0}
-.stats div{background-color:var(--ink);background-image:linear-gradient(to right, color-mix(in srgb, var(--on-ink-mute) 7%, transparent) 1px, transparent 1px),linear-gradient(to bottom, color-mix(in srgb, var(--on-ink-mute) 7%, transparent) 1px, transparent 1px);background-size:18px 18px;padding:1.2rem 1.3rem;min-width:0}
-.stats b{display:block;font-family:var(--f-display);font-size:1.9rem;color:var(--on-ink);font-variant-numeric:tabular-nums}
-.stats span{font-size:.85rem;color:var(--on-ink-mute)}
-.stats div:last-child{grid-column:1 / -1}
-.costa-map{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.35rem;padding:1rem 1.25rem;background:var(--ink);border:1px solid var(--line-dark);border-radius:var(--r);min-width:0;overflow:hidden}
-.costa-map img{display:block;width:min(100%,310px);height:auto;max-height:255px;object-fit:contain}
-.costa-map h3{margin:.2rem 0 0;font-family:var(--f-display);font-size:1.1rem;color:var(--on-ink);text-align:center}
-.costa-map p{margin:0;color:var(--on-ink-mute);font-size:.8rem;text-align:center}
-
-@media(max-width:760px){.stats-region{grid-template-columns:1fr}.costa-map{min-height:280px}.costa-map img{max-height:220px}}
-@media(max-width:520px){.stats div{padding:1rem .8rem}.stats b{font-size:1.45rem}.stats span{font-size:.78rem}}
+.stats-region{margin-top:3.5rem}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;background:transparent;border:0;border-radius:0;overflow:visible;min-width:0}
+.stats div{display:flex;flex-direction:column;justify-content:center;min-height:126px;background-color:var(--ink);background-image:linear-gradient(to right, color-mix(in srgb, var(--on-ink-mute) 6%, transparent) 1px, transparent 1px),linear-gradient(to bottom, color-mix(in srgb, var(--on-ink-mute) 6%, transparent) 1px, transparent 1px);background-size:20px 20px;padding:1.5rem 1.7rem;min-width:0;border:1px solid var(--line-dark);border-radius:18px;box-shadow:0 8px 24px -18px var(--shadow);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.stats div:hover{transform:translateY(-3px);border-color:var(--accent-text);box-shadow:0 14px 28px -18px var(--shadow)}
+.stats b{display:block;font-family:var(--f-display);font-size:clamp(1.55rem,2.6vw,2rem);line-height:1.15;color:var(--on-ink);font-variant-numeric:tabular-nums;margin-bottom:.4rem;letter-spacing:-.02em}
+.stats span{font-size:.9rem;line-height:1.5;color:var(--on-ink-mute);max-width:34ch}
+@media(max-width:520px){.stats{gap:.7rem}.stats div{min-height:108px;padding:1.05rem;border-radius:14px}.stats b{font-size:1.4rem}.stats span{font-size:.8rem}}
 
 /* ---------- Produtos ---------- */
 .products{padding-block:4.5rem 5rem;border-top:1px solid var(--line-dark)}
@@ -385,16 +379,11 @@ footer a:hover{color:var(--on-ink)}
   <div class="wrap">
     <div class="stats-region">
       <div class="stats">
-        <div><b>Desde 1993</b><span>Desenvolvendo tecnologia para empresas</span></div>
-        <div><b>+33</b><span>Anos de experiência no mercado</span></div>
+        <div><b>Desde 1993</b><span>Tecnologia para empresas</span></div>
         <div><b>1.500+</b><span>Empresas atendidas</span></div>
         <div><b>450 mil+</b><span>Documentos fiscais eletrônicos emitidos por ano</span></div>
+        <div><b>+33</b><span>Anos de experiência no mercado</span></div>
       </div>
-      <aside class="costa-map" aria-label="Mapa ilustrativo do Rio Grande do Sul com destaque para a região Costa Doce">
-        <img src="assets/mapa-rio-grande-do-sul-costa-doce.svg" alt="Mapa do Rio Grande do Sul com a Região Costa Doce destacada em azul" loading="lazy">
-        <h3>Costa Doce Gaúcha</h3>
-        <p>Referência na Região Costa Doce</p>
-      </aside>
     </div>
   </div>
 </section>
