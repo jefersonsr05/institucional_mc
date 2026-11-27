@@ -221,6 +221,26 @@ p{margin:0}
 .dl a span{font-family:var(--f-mono);font-size:.78rem;color:var(--mute);font-weight:400}
 .hours{margin-top:1.3rem;font-size:.9rem;color:var(--mute)}
 
+/* ---------- Depoimentos (TEXTOS PROVISÓRIOS) ---------- */
+.dep-track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,calc((100% - 3rem)/3));gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.2rem .2rem 1.2rem;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+@media(max-width:960px){.dep-track{grid-auto-columns:minmax(260px,calc((100% - 1.5rem)/2))}}
+@media(max-width:620px){.dep-track{grid-auto-columns:86%}}
+.dep{scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;display:flex;flex-direction:column;gap:1rem;min-width:0;margin:0}
+.dep blockquote{margin:0;color:var(--fg);font-size:.98rem;line-height:1.6;flex:1}
+.dep blockquote::before{content:"\201C";display:block;font-family:Georgia,serif;font-size:2.6rem;line-height:.8;color:var(--brand-text);margin-bottom:.3rem}
+.dep figcaption{display:flex;align-items:center;gap:.8rem;border-top:1px solid var(--line);padding-top:1rem}
+.dep .av{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-family:var(--f-mono);font-weight:600;font-size:.85rem;background:var(--brand);color:#fff}
+.dep:nth-child(3n+2) .av{background:var(--lime);color:#13202B}
+.dep:nth-child(3n) .av{background:#3FC1D9;color:#0B1B2B}
+.dep b{display:block;font-size:.98rem}
+.dep small{display:block;color:var(--mute);font-size:.82rem}
+.dep .tag{align-self:flex-start;font-family:var(--f-mono);font-size:.72rem;border:1px solid var(--line);border-radius:6px;padding:.15rem .45rem;color:var(--mute);white-space:nowrap}
+.dep-nav{display:flex;gap:.5rem}
+.dep-nav button{width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);font-size:1.1rem;cursor:pointer}
+.dep-nav button:hover{border-color:var(--brand-text)}
+.dep-clients{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.dep-clients span{font-family:var(--f-mono);font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:.25rem .7rem;color:var(--mute)}
+
 /* ---------- Contato ---------- */
 .contact{padding-block:5rem}
 .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
@@ -320,6 +340,7 @@ footer a:hover{color:var(--on-ink)}
       <a href="#segmentos">Segmentos</a>
       <a href="#sobre">Sobre</a>
       <a href="#parceiros">Parceiros</a>
+      <a href="#depoimentos">Clientes</a>
       <a href="#suporte">Suporte</a>
       <a class="btn btn-lime" href="#contato">Fale conosco</a>
     </nav>
@@ -505,6 +526,92 @@ footer a:hover{color:var(--on-ink)}
   </div>
 </section>
 
+<!--
+  DEPOIMENTOS: TEXTOS PROVISÓRIOS (PLACEHOLDER).
+  As citações abaixo são fictícias e foram escritas só para montar o layout.
+  Substituir pelos depoimentos reais e aprovados por cada cliente antes de
+  publicar. Cada card está marcado com data-placeholder="true".
+-->
+<section class="light" id="depoimentos" aria-labelledby="dep-t" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Clientes</p><h2 id="dep-t">Quem usa a MC no dia a dia</h2></div>
+      <div class="dep-nav" aria-label="Navegar pelos depoimentos">
+        <button type="button" id="depPrev" aria-label="Depoimentos anteriores">←</button>
+        <button type="button" id="depNext" aria-label="Próximos depoimentos">→</button>
+      </div>
+    </div>
+    <div class="dep-track" id="depTrack" tabindex="0" aria-label="Depoimentos de clientes">
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">MC Gestão</span>
+        <blockquote>Estoque, compras e financeiro no mesmo sistema. A conferência que levava a tarde inteira hoje sai em minutos, e o suporte resolve tudo pelo acesso remoto.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">PC</span><span><b>PC Informática</b><small>Gestão da empresa</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">MC Gestão</span>
+        <blockquote>Trabalhamos com a MC há anos e o que mais pesa é a parceria: quando a legislação muda, o sistema já vem atualizado e a gente nem precisa se preocupar.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">CL</span><span><b>Clarão</b><small>Direção</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">MC Pag</span>
+        <blockquote>Com o MC Pag a venda no cartão entra direto no caixa. Acabou a redigitação na maquininha e o fechamento do dia bate certinho.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">MX</span><span><b>MIX</b><small>Gerência de loja</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">Dashboards</span>
+        <blockquote>Abro o Dashboards no celular de manhã e já sei como foi o dia anterior: faturamento, ticket médio e os horários de mais movimento.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">CN</span><span><b>Casa Natal</b><small>Administração</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">MC Gestão · SIDE</span>
+        <blockquote>Temos mais de uma loja e precisávamos de números confiáveis de todas. A MC entregou integração entre as unidades e notas fiscais sem dor de cabeça.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">GC</span><span><b>Grupo Center</b><small>Diretoria</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">MC Gestão</span>
+        <blockquote>O controle por cor e tamanho mudou nossa rotina. Sabemos exatamente o que tem na loja e o que precisa repor antes de faltar.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">LK</span><span><b>Look</b><small>Gestão comercial</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">MC Gestão</span>
+        <blockquote>Grade de calçados, trocas e consignação funcionando sem planilha. A equipe aprendeu rápido e o atendimento da MC é muito próximo.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">SM</span><span><b>Sapato Mania</b><small>Gerência</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">Cobrança</span>
+        <blockquote>O módulo de Cobrança envia os lembretes pelo WhatsApp com o nosso texto. A inadimplência caiu e ninguém precisa mais ligar cliente por cliente.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">AS</span><span><b>Astral</b><small>Financeiro</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">MC Gestão</span>
+        <blockquote>Sistema estável, rápido e com suporte que conhece o nosso negócio. Quando ligamos, quem atende sabe do que estamos falando.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">TU</span><span><b>Tuica</b><small>Administração</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">MC Super</span>
+        <blockquote>O frente de caixa é ágil mesmo nos dias de pico, e as promoções do clube Scanntech entram automáticas. Fila menor e cliente satisfeito.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">SS</span><span><b>Supermercado Serrano</b><small>Gerência do mercado</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">MC Gestão · SIDE</span>
+        <blockquote>A emissão de NF-e e NFC-e é simples e nunca nos deixou na mão. Com a Reforma Tributária, foi um alívio saber que a MC já estava preparada.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">MI</span><span><b>Minuano</b><small>Gestão</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">MC Mobile</span>
+        <blockquote>Com o Mobile levamos a venda até o cliente, e tudo volta para o sistema sem retrabalho. Ganhamos agilidade no atendimento.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">CH</span><span><b>Chafariz</b><small>Direção</small></span></figcaption>
+      </figure>
+      <figure class="dep" data-placeholder="true">
+        <span class="tag">MC Gestão · Dashboards</span>
+        <blockquote>Os relatórios e os gráficos com análise mostram onde estamos ganhando e perdendo. Hoje decidimos compras com base em números, não em achismo.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">BC</span><span><b>Becar</b><small>Gerência</small></span></figcaption>
+      </figure>
+    </div>
+    <div class="dep-clients" aria-label="Alguns clientes"><span>PC Informática</span><span>Clarão</span><span>MIX</span><span>Casa Natal</span><span>Grupo Center</span><span>Look</span><span>Sapato Mania</span><span>Astral</span><span>Tuica</span><span>Supermercado Serrano</span><span>Minuano</span><span>Chafariz</span><span>Becar</span></div>
+  </div>
+</section>
+
 <section class="dark contact" id="contato" aria-labelledby="ct-t">
   <div class="wrap">
     <div>
@@ -671,6 +778,12 @@ footer a:hover{color:var(--on-ink)}
     tabs.appendChild(b);
   });
   show(0);
+
+  /* Depoimentos: setas rolam a faixa de cards */
+  var dt=document.getElementById('depTrack');
+  function depGo(d){var c=dt.querySelector('.dep');var w=c?c.getBoundingClientRect().width+24:300;dt.scrollBy({left:d*w,behavior:'smooth'})}
+  document.getElementById('depPrev').onclick=function(){depGo(-1)};
+  document.getElementById('depNext').onclick=function(){depGo(1)};
 
   var tb=document.getElementById('themeBtn'),de=document.documentElement;
   try{var sv=localStorage.getItem('mc-theme');if(sv==='light'||sv==='dark')de.setAttribute('data-theme',sv)}catch(e){}
