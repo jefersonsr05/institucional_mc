@@ -126,12 +126,11 @@ p{margin:0}
 .stats span{font-size:.85rem;color:var(--on-ink-mute)}
 .stats div:last-child{grid-column:1 / -1}
 .costa-map{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.35rem;padding:1rem 1.25rem;background:var(--ink);border:1px solid var(--line-dark);border-radius:var(--r);min-width:0;overflow:hidden}
-.costa-map svg{display:block;width:min(100%,310px);height:auto;max-height:255px}
+.costa-map img{display:block;width:min(100%,310px);height:auto;max-height:255px;object-fit:contain}
 .costa-map h3{margin:.2rem 0 0;font-family:var(--f-display);font-size:1.1rem;color:var(--on-ink);text-align:center}
 .costa-map p{margin:0;color:var(--on-ink-mute);font-size:.8rem;text-align:center}
-.costa-map .map-legend{display:flex;align-items:center;gap:.45rem;color:var(--on-ink-mute);font-size:.75rem}
-.costa-map .map-legend i{display:inline-block;width:22px;height:3px;background:#168BDE;border-radius:4px}
-@media(max-width:760px){.stats-region{grid-template-columns:1fr}.costa-map{min-height:280px}.costa-map svg{max-height:220px}}
+
+@media(max-width:760px){.stats-region{grid-template-columns:1fr}.costa-map{min-height:280px}.costa-map img{max-height:220px}}
 @media(max-width:520px){.stats div{padding:1rem .8rem}.stats b{font-size:1.45rem}.stats span{font-size:.78rem}}
 
 /* ---------- Produtos ---------- */
@@ -392,22 +391,9 @@ footer a:hover{color:var(--on-ink)}
         <div><b>450 mil+</b><span>Documentos fiscais eletrônicos emitidos por ano</span></div>
       </div>
       <aside class="costa-map" aria-label="Mapa ilustrativo do Rio Grande do Sul com destaque para a região Costa Doce">
-        <svg viewBox="0 0 360 260" role="img" aria-labelledby="rs-map-title rs-map-desc">
-          <title id="rs-map-title">Mapa do Rio Grande do Sul — Costa Doce</title>
-          <desc id="rs-map-desc">Silhueta geográfica do Rio Grande do Sul, com o entorno da Lagoa dos Patos e a região Costa Doce destacados em azul.</desc>
-          <path d="M18 66 L38 53 L63 48 L84 34 L108 39 L130 29 L153 38 L176 31 L199 43 L222 40 L244 53 L267 57 L288 72 L300 89 L294 107 L307 123 L299 140 L304 157 L294 173 L289 190 L276 204 L266 220 L247 231 L228 224 L210 239 L191 228 L171 231 L151 218 L130 215 L111 200 L91 194 L73 178 L55 162 L40 144 L31 124 L23 103 Z" fill="var(--surface)" stroke="var(--on-ink-mute)" stroke-width="2.4" stroke-linejoin="round"/>
-          <path d="M246 118 C253 129 257 142 254 156 C251 171 247 185 239 199 C234 207 229 211 224 207 C219 202 221 191 225 180 C230 167 232 154 230 143 C228 132 233 122 239 117 Z" fill="var(--ink-2)" stroke="var(--on-ink-mute)" stroke-width="1.2"/>
-          <path d="M209 91 C220 94 230 101 235 112 C239 121 239 132 235 142 C231 151 230 162 225 173 C220 184 215 194 207 202" fill="none" stroke="#168BDE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M209 91 C199 100 196 110 198 120 C200 130 196 139 190 148 C185 157 188 168 194 177 C198 184 198 193 207 202" fill="none" stroke="#168BDE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
-          <circle cx="211" cy="121" r="4.5" fill="#168BDE"/>
-          <path d="M211 121 L276 101" stroke="#168BDE" stroke-width="1.5" stroke-dasharray="3 3"/>
-          <text x="280" y="96" fill="var(--on-ink)" font-size="10" font-weight="700" text-anchor="end">Costa Doce</text>
-          <text x="145" y="133" fill="var(--on-ink-mute)" font-size="14" font-weight="700" text-anchor="middle" opacity=".8">RIO GRANDE</text>
-          <text x="145" y="149" fill="var(--on-ink-mute)" font-size="14" font-weight="700" text-anchor="middle" opacity=".8">DO SUL</text>
-        </svg>
+        <img src="assets/mapa-rio-grande-do-sul-costa-doce.svg" alt="Mapa do Rio Grande do Sul com a Região Costa Doce destacada em azul" loading="lazy">
         <h3>Costa Doce Gaúcha</h3>
-        <p>Presença e referência na região</p>
-        <div class="map-legend"><i></i> Região Costa Doce em destaque</div>
+        <p>Referência na Região Costa Doce</p>
       </aside>
     </div>
   </div>
