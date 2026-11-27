@@ -119,12 +119,19 @@ p{margin:0}
 .cursor{display:inline-block;width:.55em;height:1.05em;background:var(--lime);vertical-align:-.15em;animation:blink 1.1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);border-radius:var(--r);overflow:hidden;margin-top:3.5rem}
-.stats div{background-color:var(--ink);background-image:linear-gradient(to right, color-mix(in srgb, var(--on-ink-mute) 7%, transparent) 1px, transparent 1px),linear-gradient(to bottom, color-mix(in srgb, var(--on-ink-mute) 7%, transparent) 1px, transparent 1px);background-size:18px 18px;padding:1.2rem 1.3rem}
+.stats-region{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(280px,.88fr);gap:1.25rem;align-items:stretch;margin-top:3.5rem}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);border-radius:var(--r);overflow:hidden;min-width:0}
+.stats div{background-color:var(--ink);background-image:linear-gradient(to right, color-mix(in srgb, var(--on-ink-mute) 7%, transparent) 1px, transparent 1px),linear-gradient(to bottom, color-mix(in srgb, var(--on-ink-mute) 7%, transparent) 1px, transparent 1px);background-size:18px 18px;padding:1.2rem 1.3rem;min-width:0}
 .stats b{display:block;font-family:var(--f-display);font-size:1.9rem;color:var(--on-ink);font-variant-numeric:tabular-nums}
 .stats span{font-size:.85rem;color:var(--on-ink-mute)}
 .stats div:last-child{grid-column:1 / -1}
-.stats div{min-width:0}
+.costa-map{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.35rem;padding:1rem 1.25rem;background:var(--ink);border:1px solid var(--line-dark);border-radius:var(--r);min-width:0;overflow:hidden}
+.costa-map svg{display:block;width:min(100%,310px);height:auto;max-height:255px}
+.costa-map h3{margin:.2rem 0 0;font-family:var(--f-display);font-size:1.1rem;color:var(--on-ink);text-align:center}
+.costa-map p{margin:0;color:var(--on-ink-mute);font-size:.8rem;text-align:center}
+.costa-map .map-legend{display:flex;align-items:center;gap:.45rem;color:var(--on-ink-mute);font-size:.75rem}
+.costa-map .map-legend i{display:inline-block;width:22px;height:3px;background:#168BDE;border-radius:4px}
+@media(max-width:760px){.stats-region{grid-template-columns:1fr}.costa-map{min-height:280px}.costa-map svg{max-height:220px}}
 @media(max-width:520px){.stats div{padding:1rem .8rem}.stats b{font-size:1.45rem}.stats span{font-size:.78rem}}
 
 /* ---------- Produtos ---------- */
@@ -377,12 +384,30 @@ footer a:hover{color:var(--on-ink)}
     </div>
   </div>
   <div class="wrap">
-    <div class="stats">
-      <div><b>Desde 1993</b><span>Desenvolvendo tecnologia para empresas</span></div>
-      <div><b>+33</b><span>Anos de experiência no mercado</span></div>
-      <div><b>1.500+</b><span>Empresas atendidas</span></div>
-      <div><b>Costa Doce</b><span>Referência em tecnologia e gestão na região</span></div>
-      <div><b>450 mil+</b><span>Documentos fiscais eletrônicos emitidos por ano</span></div>
+    <div class="stats-region">
+      <div class="stats">
+        <div><b>Desde 1993</b><span>Desenvolvendo tecnologia para empresas</span></div>
+        <div><b>+33</b><span>Anos de experiência no mercado</span></div>
+        <div><b>1.500+</b><span>Empresas atendidas</span></div>
+        <div><b>450 mil+</b><span>Documentos fiscais eletrônicos emitidos por ano</span></div>
+      </div>
+      <aside class="costa-map" aria-label="Mapa ilustrativo do Rio Grande do Sul com destaque para a região Costa Doce">
+        <svg viewBox="0 0 320 300" role="img" aria-labelledby="rs-map-title rs-map-desc">
+          <title id="rs-map-title">Rio Grande do Sul — Costa Doce</title>
+          <desc id="rs-map-desc">Contorno ilustrativo do Rio Grande do Sul com a faixa da Costa Doce destacada em azul na porção centro-leste do estado.</desc>
+          <path d="M78 18 L104 29 L126 23 L149 36 L171 31 L193 48 L217 50 L234 67 L254 75 L267 96 L258 119 L273 139 L260 158 L268 181 L251 199 L247 220 L228 236 L218 258 L197 272 L176 267 L158 283 L139 270 L121 265 L108 246 L91 239 L84 218 L68 205 L72 183 L58 166 L66 145 L55 127 L64 105 L59 83 L72 66 L66 45 Z" fill="var(--surface)" stroke="var(--on-ink-mute)" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M220 102 L239 112 L248 130 L241 146 L251 160 L242 176 L247 193 L232 207 L226 224 L210 235 L196 231 L188 214 L195 198 L187 183 L198 166 L193 149 L205 133 L201 117 Z" fill="none" stroke="#168BDE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M213 132 L229 143 L222 158 L233 173 L222 188 L226 203" fill="none" stroke="#168BDE" stroke-width="2" stroke-linecap="round" opacity=".75"/>
+          <circle cx="218" cy="174" r="4.5" fill="#168BDE"/>
+          <path d="M218 174 L276 155" stroke="#168BDE" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <text x="280" y="151" fill="var(--on-ink)" font-size="10" font-weight="700" text-anchor="end">Costa</text>
+          <text x="280" y="163" fill="var(--on-ink)" font-size="10" font-weight="700" text-anchor="end">Doce</text>
+          <text x="157" y="155" fill="var(--on-ink-mute)" font-size="13" font-weight="700" text-anchor="middle" opacity=".8">RS</text>
+        </svg>
+        <h3>Costa Doce Gaúcha</h3>
+        <p>Presença e referência na região</p>
+        <div class="map-legend"><i></i> Região Costa Doce em destaque</div>
+      </aside>
     </div>
   </div>
 </section>
