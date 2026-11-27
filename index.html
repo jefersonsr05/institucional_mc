@@ -123,6 +123,8 @@ p{margin:0}
 .stats div{background-color:var(--ink);background-image:linear-gradient(to right, color-mix(in srgb, var(--on-ink-mute) 7%, transparent) 1px, transparent 1px),linear-gradient(to bottom, color-mix(in srgb, var(--on-ink-mute) 7%, transparent) 1px, transparent 1px);background-size:18px 18px;padding:1.2rem 1.3rem}
 .stats b{display:block;font-family:var(--f-display);font-size:1.9rem;color:var(--on-ink);font-variant-numeric:tabular-nums}
 .stats span{font-size:.85rem;color:var(--on-ink-mute)}
+.stats div:last-child{grid-column:1 / -1}
+.stats div{min-width:0}
 @media(max-width:520px){.stats div{padding:1rem .8rem}.stats b{font-size:1.45rem}.stats span{font-size:.78rem}}
 
 /* ---------- Produtos ---------- */
